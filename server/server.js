@@ -19,24 +19,15 @@ io.on('connection', (socket) => {
     console.log("Disconnected from client");
   });
 
-  socket.on('createEmail', (newEmail) => {
-    console.log('createEmail', newEmail)
-  });
 
-  socket.emit('newEmail', {
-    from: 'mike@example.com',
-    text: "Hey, What is going on?",
-    createdAt: 1234
-  });
-
-  socket.on('createMessage', (newMessage) => {
-    console.log('createMessage', newMessage)
+  socket.on('createMessage', (message) => {
+    console.log('createMessage', message);
   });
 
   socket.emit('newMessage', {
-    from: "gianpaul817",
-    text: "YOOOOOO",
-    createdAt: 123456
+    from: 'mike@example.com',
+    text: "Hey, What is going on?",
+    createdAt: 1234
   });
 
 });
