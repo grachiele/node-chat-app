@@ -17,7 +17,14 @@ io.on('connection', (socket) => {
 
   socket.on('disconnect', () => {
     console.log("Disconnected from client");
-  })
+  });
+
+  socket.emit('newEmail', {
+    from: 'mike@example.com',
+    text: "Hey, What is going on?"
+    createdAt: 1234
+  });
+
 });
 
 server.listen(port, () => {
