@@ -2,11 +2,6 @@ var socket = io();
 socket.on('connect', function () {
   console.log("Connected to server")
 
-  socket.emit("createEmail", {
-    to: 'jen@example.com',
-    text: 'Hey, This is Gerald.'
-  });
-
   socket.emit("createMessage", {
     to: "jerry@email.com",
     text: "helloooooo"
