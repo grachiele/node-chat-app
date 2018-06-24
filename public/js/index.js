@@ -18,6 +18,6 @@ socket.on("newMessage", function (message) {
 socket.emit('createMessage', {
   from: 'Frank',
   text: 'Hi'
-}, function (){
-  console.log("Got it!");
+}, function (data){
+  console.log("Got it!", data);
 });
