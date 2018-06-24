@@ -14,3 +14,10 @@ socket.on('newEmail', function (email) {
 socket.on("newMessage", function (message) {
   console.log('new message', message)
 });
+
+socket.emit('createMessage', {
+  from: 'Frank',
+  text: 'Hi'
+}, function (){
+  console.log("Got it!");
+});
