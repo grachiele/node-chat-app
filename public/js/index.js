@@ -27,13 +27,16 @@ socket.on("newLocationMessage", function (message) {
 
 jQuery('#message-form').on('submit', function (e) {
   e.preventDefault();
+  let message = jQuery('[name = message]');
 
   socket.emit('createMessage', {
     from: 'User',
-    text: jQuery('[name = message]').val()
+    text: message.val()
   }, function () {
 
   });
+
+  message.val("");
 })
 
 var locationButton = jQuery('#send-location');
