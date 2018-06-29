@@ -30,12 +30,18 @@ jQuery('#message-form').on('submit', function (e) {
   let user = jQuery('[name = user]')
   let message = jQuery('[name = message]');
 
-  socket.emit('createMessage', {
-    from: user.val(),
-    text: message.val()
-  }, function () {
+  if (user.val() === ""){
+    alert("You need to enter a username!")
+  } else if (message.val() === "") {
+    alert("You need to enter a message!")
+  } else {
+    socket.emit('createMessage', {
+      from: user.val(),
+      text: message.val()
+    }, function () {
 
-  });
+    });
+  }
 
   message.val("");
 })
