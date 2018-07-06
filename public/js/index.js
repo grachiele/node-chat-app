@@ -51,16 +51,16 @@ locationButton.on('click', function () {
     return alert("SORRY YOUR BROWSER DOESN'T SUPPORT THIS FEATURE!")
   }
 
-  locationButton.attr("disabled", "disabled")
+  locationButton.attr("disabled", "disabled").text("Sending location...");
 
   navigator.geolocation.getCurrentPosition(function (position) {
-    locationButton.removeAttr('disabled')
+    locationButton.removeAttr('disabled').text("Send location");
     socket.emit('createLocationMessage', {
       latitude: position.coords.latitude,
       longitude: position.coords.longitude
     });
   }, function (){
     alert('Unable to fetch location.');
-    locationButton.removeAttr('disabled')
+    locationButton.removeAttr('disabled').text("Send location");
   });
 });
