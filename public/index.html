@@ -7,19 +7,27 @@
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 
-<body>
-  <p>
-    Welcome to the Chat App
-  </p>
+<body class="chat">
 
-  <ol id="messages"></ol>
+  <div class="chat__sidebar">
+    <h3>People</h3>
+    <div id="users">
 
-  <form id="message-form">
-    <input autocomplete="off" name="user" type="text" placeholder="Username"/>
-    <input autocomplete="off" name="message" type="text" placeholder="Message"/>
-    <button type='submit'>Send</button>
-  </form>
-  <button id='send-location'>Send location</button>
+    </div>
+  </div>
+
+  <div class="chat__main">
+    <ol id="messages" class="chat__messages"></ol>
+
+    <div class="chat__footer">
+      <form id="message-form">
+        <input autocomplete="off" name="user" type="text" placeholder="Username"/>
+        <input autocomplete="off" name="message" type="text" placeholder="Message" autofocus />
+        <button type='submit' >Send</button>
+      </form>
+    </div>
+    <button id='send-location'>Send location</button>
+  </div>
 
 
   <script src="/socket.io/socket.io.js"></script>
