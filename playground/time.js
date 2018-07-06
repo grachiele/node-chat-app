@@ -1,4 +1,4 @@
 var moment = require('moment');
 
 var date = moment();
-console.log(date.format('MM/DD/YYYY HH:MM:SS'))
+console.log(date.format('MMM Do, YYYY H:MM A'))
